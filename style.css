@@ -46,27 +46,25 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 2;
 
-  width: min(88vw, 520px);
-  max-height: calc(100svh - 52px); /* ✅ leaves room for credit */
-  padding: 18px 16px;
-
+  width: min(92vw, 560px);              /* ⬅️ bigger card */
+  max-height: calc(100svh - 52px);      /* still no scroll */
+  padding: 22px 18px;                   /* ⬅️ more spacious */
   overflow: hidden;
 }
 
-/* ================= TEDDY (DYNAMIC FOR ALL MOBILES) ================= */
-.gif,
-#teddy {
-  width: clamp(165px, 42vw, 210px); /* ✅ dynamic: small->big phones */
-  margin: 6px auto 10px;
-  display: block;
-  height: auto;
+h1 {
+  font-size: clamp(30px, 7vw, 44px);    /* ⬅️ bigger title */
+  color: #fb5a4a;
+  margin: 8px 0 14px;
 }
 
-/* ================= TITLE (DYNAMIC TOO) ================= */
-h1 {
-  font-size: clamp(26px, 6vw, 40px);
-  color: #fb5a4a;
-  margin: 6px 0 12px;
+/* ✅ TEDDY bigger on real mobiles */
+.gif,
+#teddy {
+  width: clamp(200px, 55vw, 280px);     /* ⬅️ BIGGER teddy */
+  margin: 8px auto 12px;
+  display: block;
+  height: auto;
 }
 
 /* ================= BUTTONS ================= */
