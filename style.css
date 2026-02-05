@@ -156,3 +156,13 @@ canvas {
 .music-btn {
   display: none !important;
 }
+.credit {
+  position: fixed;
+  bottom: 8px;
+  right: 12px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  font-family: Arial, sans-serif;
+  z-index: 10000;
+  pointer-events: none;
+}
