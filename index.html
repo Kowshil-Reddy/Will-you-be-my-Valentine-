@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will you be my Valentine? 💖</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+  <!-- floating kisses/hearts -->
+  <div id="floatLayer" aria-hidden="true"></div>
+
+  <!-- background music -->
+  <audio id="bgMusic" loop preload="auto"
+    src="https://cdn.pixabay.com/download/audio/2022/10/03/audio_8b7b0d2c0a.mp3?filename=romantic-piano-112191.mp3">
+  </audio>
+
+  <!-- music toggle button -->
+  <button id="musicBtn" class="music-btn" title="Play/Pause music">🔊</button>
+
+  <div class="container">
+    <img
+      id="teddy"
+      class="teddy"
+      src="https://media.tenor.com/ZhNxfL0GmoMAAAAi/mocha-bear-hearts.gif"
+      alt="Mocha Bear Hearts"
+    />
+
+    <h1 id="title">Will you be my Valentine? 💖</h1>
+
+    <div class="buttons" id="buttonsBox">
+      <button id="yesBtn" class="yes">Yes</button>
+      <button id="noBtn" class="no">No</button>
+    </div>
+
+    <p id="responseText"></p>
+  </div>
+
+  <canvas id="heartsCanvas"></canvas>
+
+  <script src="love.js"></script>
+</body>
+</html>
