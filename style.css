@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Lock scrolling completely (mobile + desktop) */
+/* No scroll anywhere */
 html, body {
   width: 100%;
   height: 100%;
@@ -22,15 +22,16 @@ body {
     rgba(255,255,255,0) 100%
   );
 
-  /* Perfect viewport height on mobile */
+  /* ✅ use visible mobile viewport height */
   height: 100svh;
 
   display: grid;
   place-items: center;
 
   position: relative;
+  overflow: hidden;
 
-  /* iPhone notch safe area */
+  /* ✅ safe area for notches */
   padding: env(safe-area-inset-top)
            env(safe-area-inset-right)
            env(safe-area-inset-bottom)
@@ -46,23 +47,24 @@ body {
   z-index: 2;
 
   width: min(88vw, 520px);
-  max-height: calc(100svh - 52px); /* leaves space for credit */
+  max-height: calc(100svh - 52px); /* ✅ leaves room for credit */
   padding: 18px 16px;
 
   overflow: hidden;
 }
 
-/* ================= TEDDY ================= */
+/* ================= TEDDY (DYNAMIC FOR ALL MOBILES) ================= */
 .gif,
 #teddy {
-  width: 150px;
-  margin: 6px auto 10px;   /* centered & pulled up */
+  width: clamp(165px, 42vw, 210px); /* ✅ dynamic: small->big phones */
+  margin: 6px auto 10px;
   display: block;
+  height: auto;
 }
 
-/* ================= TITLE ================= */
+/* ================= TITLE (DYNAMIC TOO) ================= */
 h1 {
-  font-size: 30px;
+  font-size: clamp(26px, 6vw, 40px);
   color: #fb5a4a;
   margin: 6px 0 12px;
 }
@@ -72,11 +74,12 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 button {
   font-family: 'Handjet', serif;
-  font-size: 26px;
+  font-size: clamp(24px, 5.5vw, 28px);
   padding: 12px 26px;
   border: none;
   border-radius: 25px;
@@ -95,7 +98,7 @@ button {
   background-color: #16a34a;
 }
 
-/* NO (starts normal, JS moves it later) */
+/* NO (starts normal, JS moves later) */
 #noBtn {
   background-color: #ef4444;
   position: static;
@@ -107,7 +110,7 @@ button {
 /* ================= RESPONSE TEXT ================= */
 #responseText {
   margin-top: 8px;
-  font-size: 22px;
+  font-size: clamp(20px, 4.8vw, 26px);
   color: #fb5a4a;
   font-weight: bold;
   min-height: 26px;
@@ -157,29 +160,10 @@ canvas {
   display: none !important;
 }
 
-/* ================= MOBILE FINAL TUNING ================= */
-@media (max-width: 480px) {
-
+/* ================= EXTRA SMALL PHONES (OPTIONAL SAFETY) ================= */
+@media (max-width: 360px) {
   .container {
-    width: 88vw;
-    max-height: calc(100svh - 52px);
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  .gif,
-  #teddy {
-    width: 300px;
-  }
-
-  button {
-    font-size: 26px;
-    padding: 12px 26px;
-  }
-
-  #responseText {
-    font-size: 20px;
+    width: 92vw;
+    padding: 16px 14px;
   }
 }
