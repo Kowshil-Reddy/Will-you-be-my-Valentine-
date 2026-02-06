@@ -49,7 +49,7 @@ document.addEventListener("click", () => {
 /* ===================== YES CLICK ===================== */
 if (yesBtn) {
   yesBtn.addEventListener("click", () => {
-    if (responseText) responseText.textContent = "I Love You!!! 💖💞";
+    if (responseText) responseText.textContent = " Love You!!! 💖💞";
     if (title) title.textContent = "You light up my world ✨";
 
     // switch to 2nd GIF
